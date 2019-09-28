@@ -1,0 +1,679 @@
+<html>
+
+<style>
+
+</style>
+
+<head>
+
+  <!--All JS Libs-->
+  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/jqBootstrapValidation.js')}}"></script>
+  <script src="{{url_for('static', filename='js/contact_me.js')}}"></script>
+
+  <!--Jquery UI Libs-->
+  <script src="{{url_for('static', filename='jquery-ui/jquery-ui.js')}}"></script>
+  <link href="{{url_for('static', filename='jquery-ui/jquery-ui.css')}}" rel='stylesheet' type='text/css'>
+  <link href="{{url_for('static', filename='jquery-ui/jquery-ui.theme.min.css')}}" rel='stylesheet' type='text/css'>
+  <link href="{{url_for('static', filename='jquery-ui/jquery-ui.structure.min.css')}}" rel='stylesheet' type='text/css'>
+
+  <!--Fonts-->
+  <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!--CSS-->
+  <link href="{{url_for('static', filename='MedbotStyle.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+  
+</head>
+
+<script>
+    //initiate queryui radio
+    $( function() {
+        $("input[name*='radio']").checkboxradio();
+    } );
+</script>
+
+<script>
+    //initiate jqueryui dropdown menu
+    $( function() {
+        $( "#temp" )
+        .selectmenu()
+        .selectmenu( "menuWidget" )
+        .addClass( "overflow" );
+    } );
+</script>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+  <!--  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+  
+    <!-- Header -->
+    <div class="bgWrapper">
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+                <div class="intro-lead-in">Hi!</div>
+                <div class="intro-lead-in">I am medBOT, your friendly health-care Partner</div>
+                <img src="{{url_for('static', filename='img/robot.png')}}" style="width: 20vw;">
+                <br>
+                <div class="intro-lead-in">Kindly answer some of these questions and I'll suggest the right doctor for you.</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Let's start</a>
+                </div>
+            </div>
+        </header>
+    </div>
+  
+    <!-- Services -->
+    <section class="page-section" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Services</h2>
+            <h3 class="section-subheading text-muted">Here are the services that we offer</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-12">
+            <!-- <span class="fa-stack fa-4x">
+                <path xmlns="http://www.w3.org/2000/svg" d="M390.12,245.9a42.36,42.36,0,1,0-49.41,41.4v44.23c0,34.82-28.24,63.07-62.61,63.07a62.66,62.66,0,0,1-62.58-63.07l-.46-50.36c16.44-2.33,32.45-11.77,46.56-28.69,2.37-2.37,3.31-5.19,2.37-8,18.81-24.93,30.58-58.35,30.58-84.24,0-39.52-17.87-43.76-47.54-50.81a11,11,0,0,0-9.85-6.13,11.16,11.16,0,0,0-11.32,11.3,11.47,11.47,0,0,0,11.32,11.3c2.33,0,4.7-1.42,6.58-2.82h0c28.69,7,36.71,8.46,36.71,37.16,0,22.6-10.83,53.17-27.3,75.29a9.93,9.93,0,0,0-7.52,3.31c-8.46,9.88-21.66,21.65-37.19,21.65-16,0-29.15-11.77-37.64-21.65a10.23,10.23,0,0,0-8-3.31c-16-22.12-26.85-52.69-26.85-75.29,0-28.7,7.52-30.57,36.71-37.16,1.87,1.4,3.75,2.82,6.61,2.82a11.46,11.46,0,0,0,11.28-11.3,11.15,11.15,0,0,0-11.28-11.3,12.33,12.33,0,0,0-10.38,6.13c-29.18,7.05-47,10.83-47,50.81,0,25.89,11.28,59.77,30.57,84.24a8.37,8.37,0,0,0,2.37,8.46c14.11,16.47,29.64,25.91,46.11,28.24v50.36a76.94,76.94,0,1,0,153.88,0V287.31a41.63,41.63,0,0,0,35.31-41.4Z" fill="#fff"/>
+            </span> -->
+            <img src="{{url_for('static', filename='img/stethoscope-flat.svg')}}" style="width: calc(25vw - 7.5%)"></img>
+            <h4 class="service-heading">e-Health Prediction</h4>
+            <p class="text-muted">Our ML/AI Algorithm allows you to predict the kind of doctors you should be seeing for your symptoms</div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section bg-light" id="how">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">How it works</h2>
+            <h3 class="section-subheading text-muted">How does Medbot AI recommend doctors?</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-6">
+            <h2 class="text-uppercase">Data Gathering</h2>
+            <h3 class="text-muted" style="font-size: 1rem;">
+              Our data set consists of thousands of surveys filled up by patients who suffer from common 
+              symptoms that has been listed down, along with the doctor's diagnosis.
+            </h3>
+          </div>
+          <div class="col-md-1 px-0"></div>
+          <div class="col-md-5 px-0">
+              <img style="width: inherit;" src="{{url_for('static', filename='showcaseImage/Forms.jpg')}}">
+          </div>
+        </div>
+        <div class="row text-center pt-5">
+          <div class="col-md-5">
+            <img style="width: inherit;" src="{{url_for('static', filename='showcaseImage/Database.png')}}">
+          </div>
+          <div class="col-md-1 px-0"></div>
+          <div class="col-md-6 px-0">
+            <h2 class="text-uppercase">Database Evaluation</h2>
+            <h3 class="text-muted" style="font-size: 1rem;">
+              Our database collects the survey and turns them into a machine-readable dataset
+              ready for processing. Once our AI has been trained on predicting the kind of disease that the 
+              patient has, the AI is now ready to recommend the appropriate doctor.
+            </h3>
+          </div>
+        </div>
+        <div class="row text-center pt-5">
+          <div class="col-md-6">
+            <h2 class="text-uppercase">Python Processing</h2>
+            <h3 class="text-muted" style="font-size: 1rem;">
+              Once your survey data has been sent, the Python script executes a test against the data set
+              and sends back an answer that most closely resembles the kind of doctor that you should see
+            </h3>
+          </div>
+          <div class="col-md-1 px-0"></div>
+          <div class="col-md-5 px-0">
+            <img style="width: inherit;" src="{{url_for('static', filename='showcaseImage/PythonScript.png')}}">
+          </div>
+        </div>
+        <div class="row text-center pt-5">
+          <div class="col-md-5">
+            <img style="width: inherit;" src="{{url_for('static', filename='showcaseImage/Complete.jpg')}}">
+          </div>
+          <div class="col-md-1 px-0"></div>
+          <div class="col-md-6 px-0">
+            <h2 class="text-uppercase">Generating The Result</h2>
+            <h3 class="text-muted" style="font-size: 1rem;">
+              The data is then displayed to the user when the testing completes
+            </h3>
+          </div>
+        </div>
+    </section>
+    <!-- Portfolio Grid -->
+    <section class="bg-light page-section" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">e-Health Prediction Service</h2>
+            <h3 class="section-subheading text-muted">Try our service by filling up the form here</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+              <h1 style="text-align: center">Do you have the following symptoms?</h1>
+              <h1 style="text-align: center"> Please check Yes or No</h1>
+          </div>
+            <div class="col-md-6" style="text-align: center;">                  
+                  <div class="questionContainer1">
+                      <h2>Do you have Running Nose?</h2>
+                      <label for="radio-1">Yes</label>
+                      <input type="radio" value="1" name="radio-set1" id="radio-1">
+                      <label for="radio-2">No</label>
+                      <input type="radio" value="0" name="radio-set1" id="radio-2">
+                  </div>
+                  <div class="questionContainer2">
+                      <h2>Do you have Nasal Obstruction?</h2>
+                      <label for="radio-3">Yes</label>
+                      <input type="radio" value="1" name="radio-set2" id="radio-3">
+                      <label for="radio-4">No</label>
+                      <input type="radio" value="0" name="radio-set2" id="radio-4">
+                  </div>
+                  <div class="questionContainer3">
+                      <h2>Are you sneezing?</h2>
+                      <label for="radio-5">Yes</label>
+                      <input type="radio" value="1" name="radio-set3" id="radio-5">
+                      <label for="radio-6">No</label>
+                      <input type="radio" value="0" name="radio-set3" id="radio-6">
+                  </div>
+                  <div class="questionContainer4">
+                      <h2>Do you have throat pain?</h2>
+                      <label for="radio-7">Yes</label>
+                      <input type="radio" value="1" name="radio-set4" id="radio-7">
+                      <label for="radio-8">No</label>
+                      <input type="radio" value="0" name="radio-set4" id="radio-8">
+                  </div>
+                  <div class="questionContainer5">
+                      <h2>Are you tired?</h2>
+                      <label for="radio-9">Yes</label>
+                      <input type="radio" value="1" name="radio-set5" id="radio-9">
+                      <label for="radio-10">No</label>
+                      <input type="radio" value="0" name="radio-set5" id="radio-10">
+                  </div>
+                  <div class="questionContainer6">
+                      <h2>Do you have cough?</h2>
+                      <label for="radio-11">Yes</label>
+                      <input type="radio" value="1" name="radio-set6" id="radio-11">
+                      <label for="radio-12">No</label>
+                      <input type="radio" value="0" name="radio-set6" id="radio-12">
+                  </div>
+                  <div class="questionContainer7">
+                      <h2>Do you have fever?</h2>
+                      <label for="radio-13">Yes</label>
+                      <input type="radio" value="1" name="radio-set7" id="radio-13">
+                      <label for="radio-14">No</label>
+                      <input type="radio" value="0" name="radio-set7" id="radio-14">
+                  </div>
+                  <div class="questionContainer8">
+                      <h2>Do you have malaise?</h2>
+                      <label for="radio-15">Yes</label>
+                      <input type="radio" value="1" name="radio-set8" id="radio-15">
+                      <label for="radio-16">No</label>
+                      <input type="radio" value="0" name="radio-set8" id="radio-16">
+                  </div>
+                  <div class="questionContainer9">
+                      <h2>Do you have inflamed tonsils?</h2>
+                      <label for="radio-17">Yes</label>
+                      <input type="radio" value="1" name="radio-set9" id="radio-17">
+                      <label for="radio-18">No</label>
+                      <input type="radio" value="0" name="radio-set9" id="radio-18">
+                  </div>
+                  <div class="questionContainer10">
+                      <h2>Do you have a hoarse voice?</h2>
+                      <label for="radio-19">Yes</label>
+                      <input type="radio" value="1" name="radio-set10" id="radio-19">
+                      <label for="radio-20">No</label>
+                      <input type="radio" value="0" name="radio-set10" id="radio-20">
+                  </div>
+                  <div class="questionContainer11">
+                      <h2>Are you experiencing breathlessness?</h2>
+                      <label for="radio-21">Yes</label>
+                      <input type="radio" value="1" name="radio-set11" id="radio-21">
+                      <label for="radio-22">No</label>
+                      <input type="radio" value="0" name="radio-set11" id="radio-22">
+                  </div>
+                  <div class="questionContainer12">
+                      <h2>Are you experiencing chest pain?</h2>
+                      <label for="radio-23">Yes</label>
+                      <input type="radio" value="1" name="radio-set12" id="radio-23">
+                      <label for="radio-24">No</label>
+                      <input type="radio" value="0" name="radio-set12" id="radio-24">
+                  </div>
+                  <div class="questionContainer13">
+                      <h2>Are you feeling restless?</h2>
+                      <label for="radio-25">Yes</label>
+                      <input type="radio" value="1" name="radio-set13" id="radio-25">
+                      <label for="radio-26">No</label>
+                      <input type="radio" value="0" name="radio-set13" id="radio-26">
+                  </div>
+                  <div class="questionContainer14">
+                      <h2>Are you having anxiety?</h2>
+                      <label for="radio-27">Yes</label>
+                      <input type="radio" value="1" name="radio-set14" id="radio-27">
+                      <label for="radio-28">No</label>
+                      <input type="radio" value="0" name="radio-set14" id="radio-28">
+                  </div>
+                  <div class="questionContainer15">
+                      <h2>Are you Wheezing?</h2>
+                      <label for="radio-29">Yes</label>
+                      <input type="radio" value="1" name="radio-set15" id="radio-29">
+                      <label for="radio-30">No</label>
+                      <input type="radio" value="0" name="radio-set15" id="radio-30">
+                  </div>
+                  <div class="questionContainer16">
+                      <h2>Do you have the chills?</h2>
+                      <label for="radio-31">Yes</label>
+                      <input type="radio" value="1" name="radio-set16" id="radio-31">
+                      <label for="radio-32">No</label>
+                      <input type="radio" value="0" name="radio-set16" id="radio-32">
+                  </div>
+                  <div class="questionContainer17">
+                      <h2>Do you have body ache?</h2>
+                      <label for="radio-33">Yes</label>
+                      <input type="radio" value="1" name="radio-set17" id="radio-33">
+                      <label for="radio-34">No</label>
+                      <input type="radio" value="0" name="radio-set17" id="radio-34">
+                  </div>
+                  <div class="questionContainer18">
+                      <h2>Are you experiencing apetite loss?</h2>
+                      <label for="radio-35">Yes</label>
+                      <input type="radio" value="1" name="radio-set18" id="radio-35">
+                      <label for="radio-36">No</label>
+                      <input type="radio" value="0" name="radio-set18" id="radio-36">
+                  </div>
+                  <div class="questionContainer19">
+                      <h2>Are you feeling lethargic? </h2>
+                      <label for="radio-37">Yes</label>
+                      <input type="radio" value="1" name="radio-set19" id="radio-37">
+                      <label for="radio-38">No</label>
+                      <input type="radio" value="0" name="radio-set19" id="radio-38">
+                  </div>
+              </div> 
+              <div class="col-md-6" style="text-align: center;">  
+                  <div class="questionContainer20">
+                      <h2>Are you experiencing weight loss?</h2>
+                      <label for="radio-39">Yes</label>
+                      <input type="radio" value="1" name="radio-set20" id="radio-39">
+                      <label for="radio-40">No</label>
+                      <input type="radio" value="0" name="radio-set20" id="radio-40">
+                  </div>
+                  <div class="questionContainer21">
+                      <h2>Are you having a headache?</h2>
+                      <label for="radio-41">Yes</label>
+                      <input type="radio" value="1" name="radio-set21" id="radio-41">
+                      <label for="radio-42">No</label>
+                      <input type="radio" value="0" name="radio-set21" id="radio-42">
+                  </div>
+                  <div class="questionContainer22">
+                      <h2>Are you experiencing memory loss?</h2>
+                      <label for="radio-43">Yes</label>
+                      <input type="radio" value="1" name="radio-set22" id="radio-43">
+                      <label for="radio-44">No</label>
+                      <input type="radio" value="0" name="radio-set22" id="radio-44">
+                  </div>
+                  <div class="questionContainer23">
+                      <h2>Are you unable to sleep?</h2>
+                      <label for="radio-45">Yes</label>
+                      <input type="radio" value="1" name="radio-set23" id="radio-45">
+                      <label for="radio-46">No</label>
+                      <input type="radio" value="0" name="radio-set23" id="radio-46">
+                  </div>
+                  <div class="questionContainer24">
+                      <h2>Are you vomiting?</h2>
+                      <label for="radio-47">Yes</label>
+                      <input type="radio" value="1" name="radio-set24" id="radio-47">
+                      <label for="radio-48">No</label>
+                      <input type="radio" value="0" name="radio-set24" id="radio-48">
+                  </div>
+                  <div class="questionContainer25">
+                      <h2>Are you feeling nauseus?</h2>
+                      <label for="radio-49">Yes</label>
+                      <input type="radio" value="1" name="radio-set25" id="radio-49">
+                      <label for="radio-50">No</label>
+                      <input type="radio" value="0" name="radio-set25" id="radio-50">
+                  </div>
+                  <div class="questionContainer26">
+                      <h2>Are you having constipation?</h2>
+                      <label for="radio-51">Yes</label>
+                      <input type="radio" value="1" name="radio-set26" id="radio-51">
+                      <label for="radio-52">No</label>
+                      <input type="radio" value="0" name="radio-set26" id="radio-52">
+                  </div>
+                  <div class="questionContainer27">
+                      <h2>Do you have rashes?</h2>
+                      <label for="radio-53">Yes</label>
+                      <input type="radio" value="1"  name="radio-set27" id="radio-53">
+                      <label for="radio-54">No</label>
+                      <input type="radio" value="0" name="radio-set27" id="radio-54">
+                  </div>
+                  <div class="questionContainer28">
+                      <h2>Are you itching?</h2>
+                      <label for="radio-55">Yes</label>
+                      <input type="radio" value="1" name="radio-set28" id="radio-55">
+                      <label for="radio-56">No</label>
+                      <input type="radio" value="0" name="radio-set28" id="radio-56">
+                  </div>
+                  <div class="questionContainer29">
+                      <h2>Are you having joint pain?</h2>
+                      <label for="radio-57">Yes</label>
+                      <input type="radio" value="1" name="radio-set29" id="radio-57">
+                      <label for="radio-58">No</label>
+                      <input type="radio" value="0" name="radio-set29" id="radio-58">
+                  </div>
+                  <div class="questionContainer30">
+                      <h2>Are you having joint pain?</h2>
+                      <label for="radio-59">Yes</label>
+                      <input type="radio" value="1" name="radio-set30" id="radio-59">
+                      <label for="radio-60">No</label>
+                      <input type="radio" value="0" name="radio-set30" id="radio-60">
+                  </div>
+                  <div class="questionContainer31">
+                      <h2>Are you experiencing swelling?</h2>
+                      <label for="radio-61">Yes</label>
+                      <input type="radio" value="1" name="radio-set31" id="radio-61">
+                      <label for="radio-62">No</label>
+                      <input type="radio" value="0" name="radio-set31" id="radio-62">
+                  </div>
+                  <div class="questionContainer32">
+                      <h2>Do you feel weak?</h2>
+                      <label for="radio-63">Yes</label>
+                      <input type="radio" value="1" name="radio-set32" id="radio-63">
+                      <label for="radio-64">No</label>
+                      <input type="radio" value="0" name="radio-set32" id="radio-64">
+                  </div>
+                  <div class="questionContainer33">
+                      <h2>Are you sweating extensively?</h2>
+                      <label for="radio-65">Yes</label>
+                      <input type="radio" value="1" name="radio-set33" id="radio-65">
+                      <label for="radio-66">No</label>
+                      <input type="radio" value="0" name="radio-set33" id="radio-66">
+                  </div>
+                  <div class="questionContainer34">
+                      <h2>Do you have swollen gums?</h2>
+                      <label for="radio-67">Yes</label>
+                      <input type="radio" value="1" name="radio-set34" id="radio-67">
+                      <label for="radio-68">No</label>
+                      <input type="radio" value="0" name="radio-set34" id="radio-68">
+                  </div>
+                  <div class="questionContainer35">
+                      <h2>Are you experiencing weight gain?</h2>
+                      <label for="radio-69">Yes</label>
+                      <input type="radio" value="1" name="radio-set35" id="radio-69">
+                      <label for="radio-70">No</label>
+                      <input type="radio" value="0" name="radio-set35" id="radio-70">
+                  </div>
+                  <div class="questionContainer36">
+                      <h2>Do you have ear pain?</h2>
+                      <label for="radio-71">Yes</label>
+                      <input type="radio" value="1" name="radio-set36" id="radio-71">
+                      <label for="radio-72">No</label>
+                      <input type="radio" value="0" name="radio-set36" id="radio-72">
+                  </div>
+                  <div class="questionContainer37">
+                      <h2>Are you experiencing stiffness of the body?</h2>
+                      <label for="radio-73">Yes</label>
+                      <input type="radio" value="1" name="radio-set37" id="radio-73">
+                      <label for="radio-74">No</label>
+                      <input type="radio" value="0" name="radio-set37" id="radio-74">
+                  </div>
+                  <div class="temperatureContainer">
+                    <label for="number">
+                      <h2>What is your current body temperature? (In celcius)</h2>
+                    </label>
+                    <select name="number" id="temp">
+                      <option value="0">35</option>
+                      <option value="1">36</option>
+                      <option value="2">37</option>
+                      <option value="3">38</option>
+                      <option value="4">39</option>
+                      <option value="5">40</option>
+                      <option value="6">41</option>
+                      <option value="7">42</option>
+                      <option value="8">43</option>
+                      <option value="9">44</option>
+                      <option value="10">45</option>
+                    </select>
+                  </div>
+                  <br>
+                  <br>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-2">
+                  <button class="healthSubmit" style="
+                    margin-top: 10px;
+                    border: 1px solid #c5c5c5; 
+                    background: #f6f6f6; 
+                    font-weight: normal; 
+                    width: inherit;
+                    height: 7.5vh;" 
+                    type="button" onclick="countDiv()">
+                  SUBMIT
+                  </button>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <div class="yesContainer" style="font-family: 'Roboto'; font-size: 20; margin-top: 15px; text-align: center; display: none;">
+                  You have selected "YES" for the following symptoms:
+                  <div class="yesList">
+
+                  </div>
+                </div>
+                <div class="responseResult" style="font-family: 'Roboto'; font-size: 20; margin-top: 15px; text-align: center; font-weight: bold;"></div>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Medbot 2019</span>
+          </div>
+         <!-- <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      //initiate jqueryui radio
+      $( function() {
+        $("label.input").checkboxradio();
+        });
+    </script>
+    <script>
+
+        (function($) {
+          "use strict"; // Start of use strict
+        
+          // Smooth scrolling using jQuery easing
+          $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: (target.offset().top - 54)
+                }, 1000, "easeInOutExpo");
+                return false;
+              }
+            }
+          });
+        
+          // Closes responsive menu when a scroll trigger link is clicked
+          $('.js-scroll-trigger').click(function() {
+            $('.navbar-collapse').collapse('hide');
+          });
+        
+          // Activate scrollspy to add active class to navbar items on scroll
+          $('body').scrollspy({
+            target: '#mainNav',
+            offset: 56
+          });
+        
+          // Collapse Navbar
+          var navbarCollapse = function() {
+            if ($("#mainNav").offset().top > 100) {
+              $("#mainNav").addClass("navbar-shrink");
+            } else {
+              $("#mainNav").removeClass("navbar-shrink");
+            }
+          };
+          // Collapse now if page is not at top
+          navbarCollapse();
+          // Collapse the navbar when page is scrolled
+          $(window).scroll(navbarCollapse);
+        
+        })(jQuery); // End of use strict
+</script>
+<script>
+  //onclick submit
+  var payload ={ "data" :{} };
+  var yesList = [];
+  function countDiv() {
+    var length = $("div[class*='questionContainer']").length;
+    for (i=1; i < length; i++) {
+        //find whether the current checkbox is checked or not
+        var currentContainer = $("div[class='questionContainer" + i + "']").find('input:checked');
+        var questionNo = "Question" + i;
+
+        //if left unchecked, default to no
+        if (currentContainer.length != 0) {
+          
+          //if value is 1 for yes, add to payload object
+          if (currentContainer[0].value == "1") {
+            payload.data[questionNo] = ["1"];
+
+            //if yes, store it in a list
+            var currentText = $("div[class='questionContainer" + i + "'] > h2").text();
+            yesList.push(currentText);
+        }
+          else {
+            payload.data[questionNo] = ["0"];
+          };
+        }
+        else {
+          payload.data[questionNo] = ["0"];
+        };
+
+    }
+
+    //show symptom text and append to list
+    $("div[class='yesContainer']").css("display","");
+    for (p = 0; p < yesList.length; p++) {
+      $("div[class='yesContainer']").append("<li>" +yesList[p] + "</li>");
+    }
+
+    //find selected temperature value
+    var tempValue = $("select[id='temp']").find('option:selected').val()
+    var tempQuestionNo  = "Question" + (length);
+    payload.data[tempQuestionNo] = [tempValue]; 
+
+    console.log("The payload is: ")
+    console.log(payload);
+
+    //remove all questions and disable button input
+    $("div[class*='questionContainer']").remove();
+    $("div[class='temperatureContainer']").remove();
+    $("button[class='healthSubmit']").prop("disabled",true);
+
+    //Fetch Medbot data on user submit
+  fetch('/hello', {
+    // Specify the method
+    method: 'POST',
+    // Specify the header as JSON
+    headers:{
+      'Content-Type': 'application/json'
+    },
+    // payload
+    body: JSON.stringify(payload)
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (json) {
+        console.log('GET response: ');
+        // Log the recommended doctor and return a response to html
+        
+        // delete [' '] within the returned string
+        var response = json.slice(2,-2);
+        console.log(json);
+        $("div[class='responseResult']").text("Based on your inputs, may I suggest you to visit a " + response );
+
+        // //remove child content and hide container
+        // $("div[class='yesContainer'] > *").remove();
+        // $("div[class='yesContainer']").css("display", "none");
+        // //reset list
+        // yesList.length = 0;
+    })
+    .catch(function(err) {
+      console.log("The console caught an error!");
+      console.log(err);
+    });
+}
+
+  
+</script>
+</body>
+</html>

@@ -389,61 +389,55 @@
                       <input type="radio" value="0" name="radio-set29" id="radio-58">
                   </div>
                   <div class="questionContainer30">
-                      <h2>Are you having joint pain?</h2>
+                      <h2>Are you experiencing swelling?</h2>
                       <label for="radio-59">Yes</label>
                       <input type="radio" value="1" name="radio-set30" id="radio-59">
                       <label for="radio-60">No</label>
                       <input type="radio" value="0" name="radio-set30" id="radio-60">
                   </div>
                   <div class="questionContainer31">
-                      <h2>Are you experiencing swelling?</h2>
+                      <h2>Do you feel weak?</h2>
                       <label for="radio-61">Yes</label>
                       <input type="radio" value="1" name="radio-set31" id="radio-61">
                       <label for="radio-62">No</label>
                       <input type="radio" value="0" name="radio-set31" id="radio-62">
                   </div>
                   <div class="questionContainer32">
-                      <h2>Do you feel weak?</h2>
+                      <h2>Are you sweating extensively?</h2>
                       <label for="radio-63">Yes</label>
                       <input type="radio" value="1" name="radio-set32" id="radio-63">
                       <label for="radio-64">No</label>
                       <input type="radio" value="0" name="radio-set32" id="radio-64">
                   </div>
                   <div class="questionContainer33">
-                      <h2>Are you sweating extensively?</h2>
+                      <h2>Do you have swollen gums?</h2>
                       <label for="radio-65">Yes</label>
                       <input type="radio" value="1" name="radio-set33" id="radio-65">
                       <label for="radio-66">No</label>
                       <input type="radio" value="0" name="radio-set33" id="radio-66">
                   </div>
                   <div class="questionContainer34">
-                      <h2>Do you have swollen gums?</h2>
+                      <h2>Are you experiencing weight gain?</h2>
                       <label for="radio-67">Yes</label>
                       <input type="radio" value="1" name="radio-set34" id="radio-67">
                       <label for="radio-68">No</label>
                       <input type="radio" value="0" name="radio-set34" id="radio-68">
                   </div>
                   <div class="questionContainer35">
-                      <h2>Are you experiencing weight gain?</h2>
+                      <h2>Do you have ear pain?</h2>
                       <label for="radio-69">Yes</label>
                       <input type="radio" value="1" name="radio-set35" id="radio-69">
                       <label for="radio-70">No</label>
                       <input type="radio" value="0" name="radio-set35" id="radio-70">
                   </div>
                   <div class="questionContainer36">
-                      <h2>Do you have ear pain?</h2>
+                      <h2>Are you experiencing stiffness of the body?</h2>
                       <label for="radio-71">Yes</label>
                       <input type="radio" value="1" name="radio-set36" id="radio-71">
                       <label for="radio-72">No</label>
                       <input type="radio" value="0" name="radio-set36" id="radio-72">
                   </div>
-                  <div class="questionContainer37">
-                      <h2>Are you experiencing stiffness of the body?</h2>
-                      <label for="radio-73">Yes</label>
-                      <input type="radio" value="1" name="radio-set37" id="radio-73">
-                      <label for="radio-74">No</label>
-                      <input type="radio" value="0" name="radio-set37" id="radio-74">
-                  </div>
+
                   <div class="temperatureContainer">
                     <label for="number">
                       <h2>What is your current body temperature? (In celcius)</h2>
@@ -593,7 +587,7 @@
   var yesList = [];
   function countDiv() {
     var length = $("div[class*='questionContainer']").length;
-    for (i=1; i < length; i++) {
+    for (i=1; i < length +1; i++) {
         //find whether the current checkbox is checked or not
         var currentContainer = $("div[class='questionContainer" + i + "']").find('input:checked');
         var questionNo = "Question" + i;
@@ -627,7 +621,7 @@
 
     //find selected temperature value
     var tempValue = $("select[id='temp']").find('option:selected').val()
-    var tempQuestionNo  = "Question" + (length);
+    var tempQuestionNo  = "Question" + (length +1);
     payload.data[tempQuestionNo] = [tempValue]; 
 
     console.log("The payload is: ")

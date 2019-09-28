@@ -2,10 +2,7 @@ from flask import Flask, escape, request, jsonify, render_template
 import joblib
 import pandas as pd
 import requests
-import os 
 import json
-import serial
-import time
 
 app = Flask(__name__)
 

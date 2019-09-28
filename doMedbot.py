@@ -24,8 +24,7 @@ def hello():
         #payload container
         payload =[]
 
-        #stringify to get length of keys
-        sanitized_incoming = str(jsonData)
+        #get length of keys in data
         entryLength = len(jsonData['data'].keys())
         
         #start from question 1
